@@ -1,0 +1,7 @@
+---
+- name: Add the user 'ipoque' with a specific password 
+  user:
+    name: ipoque
+    uid: 1001
+    group: trial
+    password: "{{ password }}"

@@ -1,0 +1,4 @@
+setup_ssh: true
+setup_user: true
+
+password: "{{ 'asdf1234' | password_hash('sha512') }}"

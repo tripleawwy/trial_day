@@ -1,0 +1,11 @@
+---
+# file: common.yml
+- name: Apply common basic configuration to all servers
+  hosts: managed
+  become: yes
+  gather_facts: false
+  pre_tasks:
+  - name: Gathering facts
+    setup:
+  roles:
+    - roles/ssh

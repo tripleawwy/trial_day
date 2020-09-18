@@ -1,0 +1,12 @@
+---
+- name: Setup ssh and add authorized keys
+  include_tasks: alpine/ssh.yml
+  tags:
+    - ssh
+  when: setup_ssh | bool
+
+- name: Add user ipoque
+  include_tasks: alpine/user.yml
+  tags:
+    - user
+  when: setup_user | bool
