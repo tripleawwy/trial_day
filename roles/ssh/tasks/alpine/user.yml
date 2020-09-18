@@ -4,7 +4,7 @@
     name: igroup
     state: present
 
-- name: Add the user 'ipoque' with a specific password 
+- name: Add the user 'ipoque' with a specific password
   user:
     name: ipoque
     uid: 1001

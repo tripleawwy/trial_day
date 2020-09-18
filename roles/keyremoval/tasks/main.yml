@@ -4,4 +4,3 @@
   tags:
     - keyremoval
   when: remove_ssh | bool
-

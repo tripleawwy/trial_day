@@ -8,4 +8,3 @@
 
 - import_playbook: playbooks/remove-ssh-keys.yml
   tags: ssh-key-removal
-

@@ -1,11 +1,12 @@
+---
 version: '3.7'
 services:
   openssh-server:
-    build: .   
+    build: .
     image: ssh-server
     container_name: ssh-server
     volumes:
-      - ./mount:/ansible 
+      - ./mount:/ansible
     ports:
       - "2222:22"
     restart: unless-stopped

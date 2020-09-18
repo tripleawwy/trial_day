@@ -1,3 +1,4 @@
+---
 - name: Set authorized key taken from file for ipoque
   authorized_key:
     user: ipoque
