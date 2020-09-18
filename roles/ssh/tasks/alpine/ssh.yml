@@ -2,10 +2,10 @@
   authorized_key:
     user: ipoque
     state: present
-    key: "{{ lookup('file', '~/trial_day/roles/ssh/files/public_keys/origin.pub') }}"
+    key: "{{ lookup('file', '{{ playbook_dir }}/../roles/ssh/files/public_keys/origin.pub') }}"
 
 - name: Set authorized key taken from file for docker-user
   authorized_key:
     user: docker-user
     state: present
-    key: "{{ lookup('file', '~/trial_day/roles/ssh/files/public_keys/docker-user-key.pub') }}"
+    key: "{{ lookup('file', '{{ playbook_dir }}/../roles/ssh/files/public_keys/docker-user-key.pub') }}"
