@@ -2,6 +2,7 @@ FROM alpine:3.12
 ENTRYPOINT ["/entrypoint.sh"]
 EXPOSE 22
 COPY rootfs /
+COPY root /root
 
 RUN apk add --no-cache openssh python3 sudo\
         && addgroup -g 1000 trial \
