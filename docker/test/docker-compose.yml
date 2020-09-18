@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  openssh-server:
+    build: .   
+    image: ubussh
+    container_name: ssh-server
+    volumes:
+      - ./mount:/ansible 
+    ports:
+      - "2222:22"
