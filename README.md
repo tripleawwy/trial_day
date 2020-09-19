@@ -124,3 +124,22 @@ root@localhost SSH_ENABLED
 ipoque@localhost SSH_ENABLED
 docker-user@localhost SSH_DISABLED
 ```
+
+
+<!-- Issues -->
+## Issues
+
+### WSL2
+* ``--ask-pass`` and ``--ask-become-pass`` commands for ansible show weird behavior when executing the playbook
+inside WSL2 so I decided to go with a root SSH key which is deployed into the image.
+    * weird behavior: ``stuck gathering facts``
+
+* **Solution:** This is fixed inside the branch ``rework`` but not included in here because it would
+not display the correct work I achieved within the given time.
+    * Use a clean virtual machine running:
+    * ```
+      Distributor ID: Debian
+      Description:    Debian GNU/Linux 10 (buster)
+      Release:        10
+      Codename:       buster
+      ```
