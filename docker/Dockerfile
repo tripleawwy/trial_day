@@ -2,7 +2,6 @@ FROM alpine:3.12
 ENTRYPOINT ["/entrypoint.sh"]
 EXPOSE 22
 COPY rootfs /
-COPY root /root
 
 RUN apk add --no-cache openssh python3 sudo\
         && addgroup -g 1000 trial \
@@ -11,5 +10,4 @@ RUN apk add --no-cache openssh python3 sudo\
         && adduser docker-user wheel\
         && chown docker-user:trial /home/docker-user\
         && sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
-        && echo "root:root" | chpasswd\
         && echo "docker-user:password01" | chpasswd

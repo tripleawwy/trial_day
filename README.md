@@ -88,13 +88,13 @@ You will be prompted to provide a password now which is **password01**
 
 #### **Add** ssh keys and new user called ipoque
 * ```sh
-  ansible-playbook site.yml --tags common
+  ansible-playbook site.yml --tags common --ask-pass --ask-become-pass
   ```
 #### **Remove** ssh keys for docker-user
 
 * **Remove** ssh keys for docker-user
 * ```sh
-  ansible-playbook site.yml --tags ssh-key-removal
+  ansible-playbook site.yml --tags ssh-key-removal --ask-pass --ask-become-pass
   ```
 
 

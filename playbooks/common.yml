@@ -3,6 +3,7 @@
 - name: Apply common basic configuration to all servers
   hosts: managed
   gather_facts: false
+  become: true
   pre_tasks:
   - name: Gathering facts
     setup:
