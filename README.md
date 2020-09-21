@@ -54,9 +54,9 @@ The following instructions will guide you trough requirements needed for this ap
    cd trial_day/
   ```
 * ```
-  chmod 600 /root/trial_day/docker/root/.ssh/root-user\
-  && chmod 600 /root/trial_day/roles/ssh/files/public_keys/origin\
-  && chmod 600 /root/trial_day/roles/ssh/files/public_keys/docker-user-key
+  chmod 600 docker/root/.ssh/root-user\
+  && chmod 600 roles/ssh/files/public_keys/origin\
+  && chmod 600 roles/ssh/files/public_keys/docker-user-key
   ```
 * Navigate to docker and docker-compose files.
 * ```sh
