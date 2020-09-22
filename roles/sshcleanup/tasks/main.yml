@@ -1,0 +1,6 @@
+---
+- name: Cleanup unwanted keys
+  include_tasks: alpine/cleanup.yml
+  tags:
+    - keyremoval
+  when: cleanup_ssh | bool

@@ -6,5 +6,5 @@
 - import_playbook: playbooks/common.yml
   tags: common
 
-- import_playbook: playbooks/remove-ssh-keys.yml
-  tags: ssh-key-removal
+- import_playbook: playbooks/cleanup-ssh.yml
+  tags: cleanup-ssh

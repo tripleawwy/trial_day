@@ -1,6 +1,0 @@
----
-- name: Set authorized key taken from file for docker-user
-  authorized_key:
-    user: docker-user
-    state: absent
-    key: "{{ lookup('file', '{{ playbook_dir }}/../roles/ssh/files/public_keys/docker-user-key.pub') }}"

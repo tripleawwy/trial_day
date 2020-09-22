@@ -1,5 +1,5 @@
 ---
-# file: remove-ssh-keys.yml
+# file: cleanup-keys.yml
 - name: Apply common basic configuration to all servers
   hosts: managed
   become: true
@@ -8,4 +8,4 @@
   - name: Gathering facts
     setup:
   roles:
-    - roles/keyremoval
+    - roles/sshcleanup

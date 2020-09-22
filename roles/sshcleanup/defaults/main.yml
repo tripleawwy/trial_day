@@ -1,0 +1,17 @@
+---
+cleanup_ssh: true
+
+userkeys_template:
+  - user: ipoque
+    # You can specify multiple keys here as a single string seperated with a new line
+    # and only these will be available in authorized_key file for this user like:
+    keys: |-
+      {{ lookup('file', '{{ playbook_dir }}/../roles/ssh/files/public_keys/origin.pub') }}
+      {{ lookup('file', '{{ playbook_dir }}/../roles/ssh/files/public_keys/docker-user-key.pub') }}
+  - user: docker-user
+    # Leaving the key 'keys' empty will remove all keys from authorized_keysi of this user
+    keys: #|-
+    #{{ lookup('file', '{{ playbook_dir }}/../roles/ssh/files/public_keys/docker-user-key.pub') }}
+
+# Following will convert the list above into a dictionary to be accessible in the task
+UserKeys: "{{ userkeys_template | items2dict(key_name='user', value_name='keys') }}"

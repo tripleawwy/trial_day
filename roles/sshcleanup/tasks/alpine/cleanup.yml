@@ -1,0 +1,8 @@
+---
+- name: Iterate through users and set keys according to the defaults declared in 'roles/sshcleanup/defaults/main.yml'
+  authorized_key:
+    user: "{{ item.key }}"
+    state: present
+    exclusive: true
+    key: "{{ item.value  }}"
+  loop: "{{ lookup('dict', UserKeys) }}"

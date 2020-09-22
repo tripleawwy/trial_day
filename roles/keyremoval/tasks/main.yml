@@ -1,6 +1,0 @@
----
-- name: Remove unwanted keys (for docker-user)
-  include_tasks: alpine/keyremoval.yml
-  tags:
-    - keyremoval
-  when: remove_ssh | bool
