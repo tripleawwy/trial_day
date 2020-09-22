@@ -54,9 +54,8 @@ The following instructions will guide you trough requirements needed for this ap
    cd trial_day/
   ```
 * ```
-  chmod 600 /root/trial_day/docker/root/.ssh/root-user\
-  && chmod 600 /root/trial_day/roles/ssh/files/public_keys/origin\
-  && chmod 600 /root/trial_day/roles/ssh/files/public_keys/docker-user-key
+  chmod 600 roles/ssh/files/public_keys/origin\
+  && chmod 600 roles/ssh/files/public_keys/docker-user-key
   ```
 * Navigate to docker and docker-compose files.
 * ```sh
@@ -88,13 +87,13 @@ You will be prompted to provide a password now which is **password01**
 
 #### **Add** ssh keys and new user called ipoque
 * ```sh
-  ansible-playbook site.yml --tags common --ask-pass --ask-become-pass
+  sudo ansible-playbook site.yml --tags common --ask-pass --ask-become-pass
   ```
-#### **Remove** ssh keys for docker-user
+#### **Cleanup** ssh keys
 
 * **Remove** ssh keys for docker-user
 * ```sh
-  ansible-playbook site.yml --tags ssh-key-removal --ask-pass --ask-become-pass
+  sudo ansible-playbook site.yml --tags cleanup-ssh --ask-pass --ask-become-pass
   ```
 
 
@@ -112,15 +111,13 @@ You will be prompted to provide a password now which is **password01**
 Output should look like this when tag **common** is used:
 
 ```yaml
-root@localhost SSH_ENABLED
 ipoque@localhost SSH_ENABLED
 docker-user@localhost SSH_ENABLED
 ```
 
-Output should look like this when tag **ssh-key-removal** is used:
+Output should look like this when tag **cleanup-ssh** is used:
 
 ```yaml
-root@localhost SSH_ENABLED
 ipoque@localhost SSH_ENABLED
 docker-user@localhost SSH_DISABLED
 ```
